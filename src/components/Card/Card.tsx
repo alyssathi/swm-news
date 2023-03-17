@@ -14,7 +14,7 @@ export const Card = ({ newsArticle, size, }: ICard) => {
 
     return (
         <div className="container-card">
-            <div>
+            <div className="text-container">
                 <div>
                     <h1>{newsArticle.head}</h1>
                     <h2>{newsArticle.teaser}</h2>
