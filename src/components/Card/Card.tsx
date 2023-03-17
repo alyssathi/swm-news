@@ -5,16 +5,24 @@ import './CardCSS.css'
 
 interface ICard {
     newsArticle: NewsArticle
+    size: string
 }
 
-export const Card = ({ newsArticle }: ICard) => {
+export const Card = ({ newsArticle, size, }: ICard) => {
     const imageURL = cleanImageURL(newsArticle.image)
     const image = require(`../../images/${imageURL}`)
 
     return (
-        <div>
-            <h1>{newsArticle.head}</h1>
-            <h2>{newsArticle.teaser}</h2>
+        <div className="container-card">
+            <div>
+                <div>
+                    <h1>{newsArticle.head}</h1>
+                    <h2>{newsArticle.teaser}</h2>
+                </div>
+                <p>{newsArticle.byline.text}</p>
+            </div>
+
+
             <img className="img" src={image} alt={`image for ${newsArticle.head} article`} />
         </div>
     )

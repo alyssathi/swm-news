@@ -1,3 +1,8 @@
 .img {
-    height: 50vh;
+    width: 50%;
+    margin: .5rem;
+}
+
+.container-card {
+    display: flex;
 }

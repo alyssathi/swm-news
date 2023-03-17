@@ -9,9 +9,9 @@ export const Homepage = () => {
 
     return (
         <div className="container">
-            {articles.map(article => {
-                return <Card newsArticle={article} />
-            })}
+            <div className="headline">
+                <Card newsArticle={articles[0]} size="lg" />
+            </div>
         </div>
     )
 }
