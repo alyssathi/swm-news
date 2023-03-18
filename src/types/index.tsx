@@ -8,3 +8,11 @@ export interface NewsArticle {
     teaser: string;
     image: string;
 }
+
+export enum articleSize {
+    extraLarge = 'xl',
+    large = "lg",
+    medium = "md",
+    small = "sm",
+    extraSmall = "xs"
+}

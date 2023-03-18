@@ -1,29 +1,30 @@
 import React from "react"
 import { cleanImageURL } from "../../helpers/text"
-import { NewsArticle } from "../../types/index"
+import { NewsArticle, articleSize } from "../../types/index"
 import './CardCSS.css'
+
 
 interface ICard {
     newsArticle: NewsArticle
-    size: string
+    size: articleSize
 }
 
-export const Card = ({ newsArticle, size, }: ICard) => {
+export const Card = ({ newsArticle, size }: ICard) => {
     const imageURL = cleanImageURL(newsArticle.image)
     const image = require(`../../images/${imageURL}`)
 
     return (
-        <div className="container-card">
-            <div className="text-container">
+        <div className={`container-card size-${size}`}>
+            <div className={`text-container text-${size}`}>
                 <div>
-                    <h1>{newsArticle.head}</h1>
-                    <h2>{newsArticle.teaser}</h2>
+                    {size === articleSize.extraLarge ? <h1>{newsArticle.head}</h1> : <h2>{newsArticle.head}</h2>}
+                    {(size === articleSize.extraLarge || size === articleSize.large) && <h3>{newsArticle.teaser}</h3>}
                 </div>
                 <p>{newsArticle.byline.text}</p>
             </div>
 
 
-            <img className="img" src={image} alt={`image for ${newsArticle.head} article`} />
+            <img className={`img img-${size}`} src={image} alt={`image for ${newsArticle.head} article`} />
         </div>
     )
 }
