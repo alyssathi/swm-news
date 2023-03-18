@@ -10,7 +10,6 @@ export async function GET<T>(
 }
 
 export const transformNewsAPIToLocal = (NewsAPIArticles: NewsAPIStruct[]): NewsArticle[] => {
-    const maxChar = 300
     let articles: NewsArticle[] = []
     NewsAPIArticles.map((news, i) => {
         const local: NewsArticle = {
