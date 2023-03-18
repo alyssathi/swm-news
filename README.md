@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 #### Given More Time...
 - Given more time, I would create media queries to make it more responsive
 - I would also be less hacky with quite a bit of the code to make it more extensible... there are some components that rely on a struct being an exact format.
-
+- I would also create a something to keep track of the last time I requested from NewsAPI and limit the useEffect call to once every hour or so, it would save on my limited amount of API calls to NewsAPI.
 
 ### Local Project:
 
