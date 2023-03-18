@@ -17,14 +17,14 @@ export const Card = ({ newsArticle, size }: ICard) => {
         <div className={`container-card size-${size}`}>
             <div className={`text-container text-${size}`}>
                 <div>
-                    {size === articleSize.extraLarge ? <h1>{newsArticle.head}</h1> : <h2>{newsArticle.head}</h2>}
-                    {(size === articleSize.extraLarge || size === articleSize.large) && <h3>{newsArticle.teaser}</h3>}
+                    {size === articleSize.extraLarge ? <h1>{newsArticle.head}</h1> : size === articleSize.extraSmall ? <h3>{newsArticle.head}</h3> : <h2>{newsArticle.head}</h2>}
+                    {(size === articleSize.extraLarge || size === articleSize.large || size === articleSize.small) && <h3>{newsArticle.teaser}</h3>}
                 </div>
-                <p>{newsArticle.byline.text}</p>
+                {size !== articleSize.extraSmall && <p>{newsArticle.byline.text}</p>}
             </div>
 
 
-            <img className={`img img-${size}`} src={image} alt={`image for ${newsArticle.head} article`} />
+            {(size === articleSize.extraLarge || size === articleSize.large || size === articleSize.medium) && <img className={`img img-${size}`} src={image} alt={`image for ${newsArticle.head} article`} />}
         </div>
     )
 }

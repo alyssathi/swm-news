@@ -33,7 +33,7 @@ export const Homepage = () => {
             {articles.map((article, i) => {
                 const cardSize = getCardSize(i)
                 return (
-                    <div className={`article-${i + 1}`}>
+                    <div className={`article article-${i + 1}`}>
                         <Card newsArticle={article} size={cardSize} />
                     </div>
                 )
