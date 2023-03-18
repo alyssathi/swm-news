@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react"
-import { Card } from "../../components"
+import { Card, Toggle, Form } from "../../components"
 import articlesJSON from "../../api/news.json"
 import { NewsArticle, articleSize, NewsAPIResponse } from "../../types/index"
 import "./homepageCSS.css"
-import { Toggle } from "../../components/Toggle/Toggle"
-import { Form } from "../../components/Form/Form"
 import { GET, transformNewsAPIToLocal } from "../../helpers/api"
 
 const getCardSize = (index: number): articleSize => {
