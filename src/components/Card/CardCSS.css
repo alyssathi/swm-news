@@ -1,16 +1,13 @@
 .img {
     width: 50%;
-    margin: .5rem;
 }
 
 .img-md {
     width: 100%;
-    margin: 0;
 }
 
 .img-lg {
     width: 100%;
-    margin: 0;
 }
 
 
@@ -37,4 +34,8 @@
 
 .size-lg {
     flex-direction: column-reverse;
+}
+
+.size-xs {
+    align-items: center;
 }
