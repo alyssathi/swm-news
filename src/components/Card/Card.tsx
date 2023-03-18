@@ -10,8 +10,11 @@ interface ICard {
 }
 
 export const Card = ({ newsArticle, size }: ICard) => {
-    const imageURL = cleanImageURL(newsArticle.image)
-    const image = require(`../../images/${imageURL}`)
+    let image = newsArticle.image
+    if (!newsArticle.image.includes("://")) {
+        const imageURL = cleanImageURL(newsArticle.image)
+        image = require(`../../images/${imageURL}`)
+    }
 
     return (
         <div className={`container-card size-${size}`}>
